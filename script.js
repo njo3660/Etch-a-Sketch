@@ -1,5 +1,8 @@
 
 const grid = document.querySelector("div");
+const slider = document.querySelector('.slider');
+const display = document.querySelector('.display');
+const reset = document.querySelector('.reset');
 
 function makeGrid(n) {
     for (i = 0; i < n; i++){
@@ -14,6 +17,9 @@ function makeBlock(n) {
     block.classList.add('block');
     let dims = 500/n;
     block.setAttribute('style', `width: ${dims}px`, `height: ${dims}px`);
+    block.onmouseover = () => {
+        block.classList.add('hovered');
+    }
     return block;
 }
 
@@ -24,15 +30,10 @@ function clearGrid(){
     return;
 }
 
-
-const slider = document.querySelector('.slider');
-const display = document.querySelector('.display');
-
-//slider.addEventListener('input', () => {
-//    clearGrid();
-//    makeGrid(slider.value);
-//    display.textContent = `${slider.value} x ${slider.value}`;
-//})
+reset.addEventListener('click', () => {
+    clearGrid();
+    makeGrid(slider.value);
+});
 
 slider.onchange = () => {
     clearGrid();
@@ -42,3 +43,6 @@ slider.onchange = () => {
 slider.oninput = () => {
     display.textContent = `${slider.value} x ${slider.value}`;
 }
+
+makeGrid(16);
+display.textContent = "16 x 16";

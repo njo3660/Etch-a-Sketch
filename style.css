@@ -2,7 +2,11 @@
     background-color: aquamarine;
 }
 
-.block:hover{
+/*.block:hover{
+    background-color: black;
+}
+*/
+.hovered{
     background-color: black;
 }
 
