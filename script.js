@@ -18,9 +18,44 @@ function makeBlock(n) {
     let dims = 500/n;
     block.setAttribute('style', `width: ${dims}px`, `height: ${dims}px`);
     block.onmouseover = () => {
-        block.classList.add('hovered');
+        //block.classList.add('hovered');
+        fillBlock(block);
     }
     return block;
+}
+
+function fillBlock(block){
+    if (block.classList.length === 1){
+        block.classList.add('fill1');
+        return;
+    }
+    switch(block.classList.length) {
+        case 2:
+            block.classList.add('fill2');
+            break;
+        case 3:
+            block.classList.add('fill3');
+            break;
+        case 4:
+            block.classList.add('fill4');
+            break;
+        case 5:
+            block.classList.add('fill5');
+            break;
+        case 6:
+            block.classList.add('fill6');
+            break;
+        case 7:
+            block.classList.add('fill7');
+            break;
+        case 8:
+            block.classList.add('fill8');
+            break;
+        case 9:
+            block.classList.add('fill9');
+            break;
+    }
+    return;
 }
 
 function clearGrid(){
