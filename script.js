@@ -1,5 +1,5 @@
 
-const grid = document.querySelector("div");
+const grid = document.querySelector(".grid");
 const slider = document.querySelector('.slider');
 const display = document.querySelector('.display');
 const reset = document.querySelector('.reset');
@@ -18,7 +18,6 @@ function makeBlock(n) {
     let dims = 500/n;
     block.setAttribute('style', `width: ${dims}px`, `height: ${dims}px`);
     block.onmouseover = () => {
-        //block.classList.add('hovered');
         fillBlock(block);
     }
     return block;
